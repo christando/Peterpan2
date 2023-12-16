@@ -77,7 +77,7 @@
                 <li class="mb-1">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                         data-bs-target="#remind-collapse" aria-expanded="false">
-                        Reminder Pengembalian
+                        <a href="#">laporan</a>
                     </button>
                 </li>
                 <li class="mb-1">

@@ -13,37 +13,6 @@ use function PHPUnit\Framework\returnSelf;
 
 class AdminController extends Controller
 {
-    public function login(){
-        return view('Login');
-    }
-
-    public function register(){
-        return view('Register');
-    }
-
-    public function save_a(Request $request)
-    {
-        Admin::create([
-            'username'=> $request->username,
-            'email'=> $request->email,
-            'password'=> bcrypt($request->password),
-        ]);
-        return redirect('/');
-    }
-
-    public function cek_login(Request $request){
-        if(Auth::attempt([
-            'username' => $request -> username,
-            'password' => $request -> password
-        ]))
-        {
-            return redirect('/home_a');
-        }
-        else
-        {
-            redirect('/');
-        }
-    }
 
     public function home()
     {
@@ -53,12 +22,6 @@ class AdminController extends Controller
     public function indexadmin()
     {
         return view('indexadmin');
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/');
     }
 
     public function data_mobil()

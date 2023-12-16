@@ -28,7 +28,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form action="/save_a" method="POST">
+            <form action="/regis_user" method="POST">
                 @csrf
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
@@ -59,6 +59,13 @@
                 <input type="password" name="password" class="form-control" placeholder="Password"/>
               </div>
 
+              <div class="form-group mb-4">
+                <select class="form-control form-control-lg mb-4" id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="driver">Driver</option>
+                    <option value="pemesan">Pemesan</option>
+                </select>
+
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
                 Sign up
@@ -66,7 +73,7 @@
               <!-- Register buttons -->
               <div class="text-center">
                 <p>or</p>
-                <a href="/Login_A" class="btn btn-primary btn-block mt-4">Sign in</a>
+                <a href="/" class="btn btn-primary btn-block mt-4">Sign in</a>
               </div>
             </form>
           </div>

@@ -21,9 +21,18 @@
                   <div class="mb-md-5 mt-md-4 pb-5">
 
                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                <form action="/ceklogin_a" method="POST">
+                <form action="/ceklogin" method="POST">
                     @csrf
                     <div class="form-outline form-white mb-4">
                       <input type="text" name="username" class="form-control form-control-lg" placeholder="Username"/>
@@ -40,7 +49,7 @@
                   </div>
 
                   <div>
-                    <p class="mb-0">Don't have an account? <a href="/regis_a" class="text-white-50 fw-bold">Sign Up</a>
+                    <p class="mb-0">Don't have an account? <a href="/regis" class="text-white-50 fw-bold">Sign Up</a>
                     </p>
                   </div>
                 </form>

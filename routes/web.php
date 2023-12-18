@@ -45,10 +45,14 @@ Route::get('/data/mobil/delete/{id}',[AdminController::class, 'delete_mobil']);
 
 //user
 
-Route::get('/regis_U', [AuthUserController::class, 'Register_User']);
-Route::post('/save_U', [AuthUserController::class, 'Save']);
 
 Route::get('/homeU', [UserController::class, 'indexuser']);
+Route::get('/pesanan', [UserController::class,'datapesanan']);
+Route::get('/data/pesanan/formtambahpesanan',[UserController::class, 'formtambahpesanan']);
+Route::POST('/tambahpesanan',[UserController::class, 'tambah_pesanan']);
+Route::get('/formeditpesanan/{id}',[UserController::class, 'formeditpesanan']);
+Route::put('/update/{id}',[UserController::class, 'update']);
+Route::get('/data/pesanan/delete/{id}',[UserController::class, 'delete_pesanan']);
 
 //driver
 Route::get('/login_D',[AuthDriverController::class, 'Login_Driver']);

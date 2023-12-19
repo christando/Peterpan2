@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('driver', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->unsignedBigInteger('id_driver');
+            $table->foreign('id_driver')->references('id')->on('users');
+            $table->string('name');
+            $table->string('sim')->nullable();
             $table->timestamps();
         });
     }

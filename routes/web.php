@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
 Route::post('/regis_user',[PageController::class, 'regis']);
 Route::get('/logout',[PageController::class, 'logout']);
 Route::get('/',[PageController::class, 'Login']);
@@ -35,12 +36,19 @@ Route::get('/regis',[PageController::class, 'register']);
 Route::post('/ceklogin', [AuthController::class, 'CekLogin']);
 
 
-
+//admin
 Route::get('/home_a',[AdminController::class, 'home']);
 Route::get('/data/mobil',[AdminController::class, 'data_mobil']);
 Route::get('/data/mobil/formtambah',[AdminController::class, 'formtambah']);
 Route::POST('/tambahmobil',[AdminController::class, 'tambah_mobil']);
 Route::get('/data/mobil/delete/{id}',[AdminController::class, 'delete_mobil']);
+Route::get('/addDriver/{id}',[AdminController::class, 'addSopir']);
+Route::put('/addDriversv/{id}',[AdminController::class, 'save_sopir']);
+Route::get('/data/sopir',[AdminController::class, 'dataSopir']);
+Route::get('/data/sopir/update/{id}',[AdminController::class, 'lengkapSopir']);
+Route::put('/data/sopir/svupdate/{id}',[AdminController::class, 'saveSopir']);
+
+
 
 
 //user
@@ -53,6 +61,7 @@ Route::put('/update/{id}',[UserController::class, 'update']);
 Route::get('/data/pesanan/delete/{id}',[UserController::class, 'delete_pesanan']);
 Route::get('/report',[UserController::class, 'report']);
 Route::post('/save/report',[UserController::class, 'save_report']);
+
 
 //driver
 Route::post('/save_D', [AuthDriverController::class, 'Save']);

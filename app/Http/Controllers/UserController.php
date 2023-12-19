@@ -6,6 +6,7 @@ use App\Models\Report;
 use App\Models\User;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -21,7 +22,8 @@ class UserController extends Controller
     }
     public function formtambahpesanan()
     {
-        return view('formtambahpesanan');
+        $data = DB::select("select * from mobil");
+        return view('formtambahpesanan', ['data'=>$data]);
     }
     public function formeditpesanan($id)
     {

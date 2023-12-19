@@ -10,8 +10,9 @@ class DriverController extends Controller
 {
     public function indexdriver(Request $request)
     {
-        $reports = Report::where('id_driver', '=', $request->id_driver)->get();
-        return view('Driver.homedriver', compact('reports'));
+        // $reports = Report::where('id_driver', '=', $request->id_driver)->get();
+        $data = Pesanan::paginate(5);
+        return view('Driver.homedriver', ['data'=> $data]);
     }
 
     public function datapesanan()

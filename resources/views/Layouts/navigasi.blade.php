@@ -16,7 +16,7 @@
                     <div class="collapse position-relative" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="/data/mobil" class="link-dark rounded">Data Mobil</a></li>
-                            <li><a href="#" class="link-dark rounded">Data Supir</a></li>
+                            <li><a href="/data/sopir" class="link-dark rounded">Data Supir</a></li>
                         </ul>
                     </div>
                 </li>
@@ -27,15 +27,9 @@
                     </button>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#pengembalian-collapse" aria-expanded="false">
-                        Pengembalian
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    <button class="btn btn-toggle align-items-center rounded collapsed"
                         data-bs-target="#report-collapse" aria-expanded="false">
-                        Report
+                        <a href="#" class="btn">Report</a>
                     </button>
                     <div class="collapse" id="report-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

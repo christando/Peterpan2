@@ -17,5 +17,6 @@ class Pesanan extends Model
         'kapasitas',
         'tanggal_berangkat',
         'tanggal_sampai',
+        'driver',
     ];
 }

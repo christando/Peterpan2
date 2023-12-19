@@ -76,105 +76,109 @@
 
         <div class="row vh-100">
             <div class="col-md-2 border">
-            <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-            <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                <span class="fs-5 fw-semibold">Sewa Mobil</span>
-            </a>
-            <ul class="list-unstyled ps-0">
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#home-collapse" aria-expanded="false">
-                        Dashboard
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed"
-                        data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <a href="#" class="btn btn-toggle align-items-center rounded collapsed">Pesan</a>
-                    </button>
+                <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+                    <a href="#"
+                        class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                        <span class="fs-5 fw-semibold">Sewa Mobil</span>
+                    </a>
+                    <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                                Dashboard
+                            </button>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                <a href="#" class="btn btn-toggle align-items-center rounded collapsed">Pesan</a>
+                            </button>
 
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#orders-collapse" aria-expanded="false">
-                        Transaksi
-                    </button>
-                </li>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                Transaksi
+                            </button>
+                        </li>
 
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed"
-                        data-bs-target="#report-collapse" aria-expanded="false">
-                        <a href="/report" class="btn btn-toggle align-items-center rounded collapsed">Feedback</a>
-                    </button>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-target="#report-collapse" aria-expanded="false">
+                                <a href="/report"
+                                    class="btn btn-toggle align-items-center rounded collapsed">Feedback</a>
+                            </button>
 
-                </li>
+                        </li>
 
 
-            </ul>
-        </div>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-10">
                 <div class="card mt-4">
-                <div class="card-header">
-                    <a href="/data/pesanan/formtambahpesanan" class="btn btn-primary" role="button"><i
-                            class="bi bi-plus-square"></i> Pesanan</a>
+                    <div class="card-header">
+                        <a href="/data/pesanan/formtambahpesanan" class="btn btn-primary" role="button"><i
+                                class="bi bi-plus-square"></i> Pesanan</a>
 
+
+                    </div>
+                    <div class="card-body">
+                        @if (session('flash'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id='alert'>
+                                <strong>{{ session('flash') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <script type="text/javascript">
+                                    setTimeout(function() {
+
+                                        // Closing the alert
+                                        $('#alert').alert('close');
+                                    }, 4000);
+                                </script>
+                            </div>
+                        @endif
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tujuan</th>
+                                    <th scope="col">jenis_mobil</th>
+                                    <th scope="col">Kapasitas</th>
+                                    <th scope="col">tanggal_berangkat</th>
+                                    <th scope="col">tanggal_sampai</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $idx => $d)
+                                    <tr>
+                                        <th scope="row">{{ $idx + $data->firstItem() }}</th>
+                                        <td>{{ $d->tujuan }}</td>
+                                        <td>{{ $d->jenis_mobil }}</td>
+                                        <td>{{ $d->kapasitas }}</td>
+                                        <td>{{ $d->tanggal_berangkat }}</td>
+                                        <td>{{ $d->tanggal_sampai }}</td>
+                                        <td>
+                                            <a href="/formeditpesanan/{{ $d->id }}" class="btn btn-success"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <a href="/data/pesanan/delete/{{ $d->id }}"
+                                                class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                        <span class='float-right'></span>
+                    </div>
 
                 </div>
-                <div class="card-body">
-                    @if (session('flash'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert" id='alert'>
-                            <strong>{{ session('flash') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <script type="text/javascript">
-                                setTimeout(function() {
-
-                                    // Closing the alert
-                                    $('#alert').alert('close');
-                                }, 4000);
-                            </script>
-                        </div>
-                    @endif
-
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tujuan</th>
-                            <th scope="col">jenis_mobil</th>
-                            <th scope="col">Kapasitas</th>
-                            <th scope="col">tanggal_berangkat</th>
-                            <th scope="col">tanggal_sampai</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($data as $idx => $d)
-                <tr>
-                    <th scope="row">{{ $idx + $data->firstItem() }}</th>
-                    <td>{{ $d->tujuan }}</td>
-                    <td>{{ $d->jenis_mobil}}</td>
-                    <td>{{ $d->kapasitas }}</td>
-                    <td>{{ $d->tanggal_berangkat }}</td>
-                    <td>{{ $d->tanggal_sampai }}</td>
-                    <td>
-                        <a href="/formeditpesanan/{{$d->id}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
-                        <a href="/data/pesanan/delete/{{$d->id}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                    </td>
-                </tr>
-                @endforeach
-                        </tbody>
-                    </table>
-
-                    <span class='float-right'></span>
-                </div>
-
             </div>
-    </div>
 
-    </ul>
-    </div>
+            </ul>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

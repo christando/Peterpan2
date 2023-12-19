@@ -48,7 +48,7 @@
                 <div class="dropdown float-right">
                     <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-person-circle"></i> USER
+                        <i class="bi bi-person-circle"></i> User
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">
@@ -76,14 +76,48 @@
 
         <div class="row vh-100">
             <div class="col-md-2 border">
-                <!-- NAVIGASI -->
-                @include('User.indexuser')
+            <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <span class="fs-5 fw-semibold">Sewa Mobil</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#home-collapse" aria-expanded="false">
+                        Dashboard
+                    </button>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        <a href="/Login_U" class="btn btn-toggle align-items-center rounded collapsed">Pesan</a>
+                    </button>
+                    
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#orders-collapse" aria-expanded="false">
+                        Transaksi
+                    </button>
+                </li>
+                
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" href=""
+                        data-bs-target="#report-collapse" aria-expanded="false">
+                        Feedback
+                    </button>
+                    
+                </li>
+
+                
+            </ul>
+        </div>
             </div>
             <div class="col-md-10">
                 <div class="card mt-4">
                 <div class="card-header">
-                    <a href="/data/mobil/formtambah" class="btn btn-primary" role="button"><i
-                            class="bi bi-plus-square"></i> Mobil</a>
+                    <a href="/data/pesanan/formtambahpesanan" class="btn btn-primary" role="button"><i
+                            class="bi bi-plus-square"></i> Pesanan</a>
 
                     <form action="#" method="GET" class="form-inline my-2 my-lg-0 float-right">
                         <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search"
@@ -111,26 +145,29 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Merk</th>
-                                <th scope="col">Warna</th>
-                                <th scope="col">Jenis</th>
-                                <th scope="col">Kapasitas</th>
-                                <th scope="col">No Polisi</th>
-                                <th scope="col">Keterangan STNK</th>
-                                <th scope="col">Aksi</th>
+                            <th scope="col">#</th>
+                            <th scope="col">tujuan</th>
+                            <th scope="col">jenis_mobil</th>
+                            <th scope="col">Kapasitas</th>
+                            <th scope="col">tanggal_berangkat</th>
+                            <th scope="col">tanggal_sampai</th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td>
-                                    <a href="/data/mobil/update/" class="btn btn-success"><i
-                                            class="bi bi-pencil-square"></i></a>
-                                    <a href="/data/mobil/delete/" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                </td>
-                            </tr>
-
+                        @foreach ($data as $idx => $d)
+                <tr>
+                    <th scope="row">{{ $idx + $data->firstItem() }}</th>
+                    <td>{{ $d->tujuan }}</td>
+                    <td>{{ $d->jenis_mobil}}</td>
+                    <td>{{ $d->kapasitas }}</td>
+                    <td>{{ $d->tanggal_berangkat }}</td>
+                    <td>{{ $d->tanggal_sampai }}</td>
+                    <td>
+                        <a href="/formeditpesanan/{{$d->id}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                        <a href="/data/pesanan/delete/{{$d->id}}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                @endforeach
                         </tbody>
                     </table>
                     <span class='float-right'></span>

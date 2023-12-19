@@ -18,6 +18,8 @@ class PageController extends Controller
             'password'=>bcrypt($request->password),
             'role'=>$request->role,
         ]);
+
+        return redirect('/');
     }
 
     public function login(){

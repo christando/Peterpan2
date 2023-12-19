@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function home()
     {
-        return view('Layouts.homeadmin');
+        return view('indexadmin');
     }
 
     public function indexadmin()

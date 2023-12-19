@@ -8,7 +8,7 @@ class DriverController extends Controller
 {
     public function indexdriver()
     {
-        return view('User.homedriver');
+        return view('Driver.homedriver');
     }
 
     public function datapesanan()

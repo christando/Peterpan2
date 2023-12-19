@@ -1,14 +1,13 @@
 <div class="nav flex-column nav-pills pt-2" style="width: 280px;">
-            <!-- <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                 <span class="fs-5 fw-semibold">Sewa Mobil</span>
-            </a> -->
+            </a>
             <ul class="list-unstyled ps-0">
-                <li class="mb-1">
-                    <a class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#home-collapse" aria-expanded="false">
+
+                    <a href="/home_a" class="btn btn-toggle align-items-center rounded collapsed" data-bs-target="#home-collapse" aria-expanded="false" >
                         Dashboard
                     </a>
-                </li>
+
                 <li class="mb-1">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                         data-bs-target="#dashboard-collapse" aria-expanded="false">
@@ -31,12 +30,6 @@
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                         data-bs-target="#pengembalian-collapse" aria-expanded="false">
                         Pengembalian
-                    </button>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#remind-collapse" aria-expanded="false">
-                        Reminder Pengembalian
                     </button>
                 </li>
                 <li class="mb-1">

@@ -44,8 +44,6 @@ Route::get('/data/mobil/delete/{id}',[AdminController::class, 'delete_mobil']);
 
 
 //user
-
-
 Route::get('/homeU', [UserController::class, 'indexuser']);
 Route::get('/pesanan', [UserController::class,'datapesanan']);
 Route::get('/data/pesanan/formtambahpesanan',[UserController::class, 'formtambahpesanan']);
@@ -53,10 +51,11 @@ Route::POST('/tambahpesanan',[UserController::class, 'tambah_pesanan']);
 Route::get('/formeditpesanan/{id}',[UserController::class, 'formeditpesanan']);
 Route::put('/update/{id}',[UserController::class, 'update']);
 Route::get('/data/pesanan/delete/{id}',[UserController::class, 'delete_pesanan']);
+Route::get('/report',[UserController::class, 'report']);
+Route::post('/save/report',[UserController::class, 'save_report']);
 
 //driver
-Route::get('/login_D',[AuthDriverController::class, 'Login_Driver']);
-Route::get('/regis_D', [AuthDriverController::class, 'Register_Driver']);
 Route::post('/save_D', [AuthDriverController::class, 'Save']);
 Route::post('/ceklogin_D', [AuthDriverController::class, 'CekLoginDriver']);
 Route::get('/homeD', [DriverController::class, 'indexdriver']);
+

@@ -12,8 +12,9 @@ class Report extends Model
     protected $table='report';
 
     protected $fillable=[
-        'date',
+        'tgl_laporan',
         'report',
-        'star_rating'
+        'star_rating',
+        'id_driver',
     ];
 }

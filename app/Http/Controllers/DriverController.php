@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pesanan;
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
 {
-    public function indexdriver()
+    public function indexdriver(Request $request)
     {
-        return view('Driver.homedriver');
+        $reports = Report::where('id_driver', '=', $request->id_driver)->get();
+        return view('Driver.homedriver', compact('reports'));
     }
 
     public function datapesanan()
@@ -20,4 +23,6 @@ class DriverController extends Controller
     {
         return view('Driver.datamobil');
     }
+
+
 }

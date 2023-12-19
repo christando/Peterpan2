@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('order_mobil', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->id('id_pesan');
+            $table->unsignedBigInteger('id_pesan');
             $table->foreign('id_pesan')->references('id')->on('pesanan');
+            $table->unsignedBigInteger('id_driver');
+            $table->foreign('id_driver')->references('id')->on('users');
             $table->string('driver');
             $table->timestamps();
         });

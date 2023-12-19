@@ -77,7 +77,7 @@
         <div class="row vh-100">
             <div class="col-md-2 border">
                 <!-- NAVIGASI -->
-                @include('Layouts.navigasi')
+                @include('User.indexuser')
             </div>
             <div class="col-md-10">
                 <div class="card mt-4">

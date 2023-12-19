@@ -47,6 +47,16 @@
 
         </tbody>
     </table>
+    <div class="container">
+        @foreach ($reports as $report)
+            <p><strong>Star Rating:</strong></p>
+            <div class="star-rating">
+                @for ($i = 1; $i <= 5; $i++)
+                    <i class="fas fa-star{{ $i <= $report->star_rating ? ' filled' : '' }}"></i>
+                @endfor
+            </div>
+        @endforeach
+    </div>
     <span class='float-right'></span>
 </div>
 @endsection

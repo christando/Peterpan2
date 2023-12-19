@@ -1,13 +1,12 @@
-@extends('')
+@extends('User.indexuser')
 @section('title', 'Report')
 @section('content')
-@section('content')
     <div class="container">
-        <form action="{{ route('report.store') }}" method="post">
+        <form action="/save/report" method="post">
             @csrf
             <div class="form-group">
                 <label for="date">Date:</label>
-                <input type="date" name="date" class="form-control" required>
+                <input type="date" name="tgl_laporan" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="report">Report:</label>

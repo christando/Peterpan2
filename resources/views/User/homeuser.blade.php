@@ -88,11 +88,11 @@
                     </button>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    <button class="btn btn-toggle align-items-center rounded collapsed"
                         data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <a href="/Login_U" class="btn btn-toggle align-items-center rounded collapsed">Pesan</a>
+                        <a href="#" class="btn btn-toggle align-items-center rounded collapsed">Pesan</a>
                     </button>
-                    
+
                 </li>
                 <li class="mb-1">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
@@ -100,16 +100,16 @@
                         Transaksi
                     </button>
                 </li>
-                
+
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" href=""
+                    <button class="btn btn-toggle align-items-center rounded collapsed"
                         data-bs-target="#report-collapse" aria-expanded="false">
-                        Feedback
+                        <a href="/report" class="btn btn-toggle align-items-center rounded collapsed">Feedback</a>
                     </button>
-                    
+
                 </li>
 
-                
+
             </ul>
         </div>
             </div>
@@ -119,11 +119,7 @@
                     <a href="/data/pesanan/formtambahpesanan" class="btn btn-primary" role="button"><i
                             class="bi bi-plus-square"></i> Pesanan</a>
 
-                    <form action="#" method="GET" class="form-inline my-2 my-lg-0 float-right">
-                        <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+
                 </div>
                 <div class="card-body">
                     @if (session('flash'))
@@ -170,27 +166,13 @@
                 @endforeach
                         </tbody>
                     </table>
+
                     <span class='float-right'></span>
                 </div>
+
             </div>
-
-
-        </div>
     </div>
-    <li class="border-top my-3"></li>
-    <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#account-collapse" aria-expanded="false">
-            Account
-        </button>
-        <div class="collapse" id="account-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">Profile</a></li>
-                <li><a href="#" class="link-dark rounded">Settings</a></li>
-                <li><a href="#" class="link-dark rounded">Sign out</a></li>
-            </ul>
-        </div>
-    </li>
+
     </ul>
     </div>
     </div>

@@ -65,19 +65,13 @@ class UserController extends Controller
 
     public function save_report(Request $request)
     {
-        $request->validate([
-            'date'=>'required|date',
-            'report'=>'required|string',
-            'star_rating'=>'require|in:1,2,3,4,5',
-        ]);
-
         Report::create([
-            'date'=>$request->date,
+            'tgl_laporan'=>$request->tgl_laporan,
             'report'=>$request->report,
             'star_rating'=>$request->star_rating,
         ]);
 
-        return redirect('/report');
+        return redirect('/homeU');
     }
-  
+
 }

@@ -35,6 +35,18 @@
         li {
             text-align: -webkit-match-parent;
         }
+        .star-rating {
+    color: #FFD700; /* Gold color for filled stars */
+    font-size: 24px; /* Adjust the size of the stars */
+}
+
+.star-rating i {
+    margin-right: 5px; /* Adjust the spacing between stars */
+}
+
+.star-rating .filled {
+    color: #FFD700; /* Gold color for filled stars */
+}
     </style>
 </head>
   <body>
